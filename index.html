@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Smart School LMS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>🏫 AI Smart School LMS</header>
+
+<div id="loginScreen" class="screen active">
+  <div class="card">
+    <h3>🔐 Login</h3>
+
+    <select id="schoolId"></select>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+    <p id="msg"></p>
+  </div>
+</div>
+
+<div id="dashboard" class="screen">
+  <div class="card">
+    👋 Welcome <span id="userName"></span><br>
+    🏫 <span id="schoolName"></span><br>
+    🎓 Class: <span id="userClass"></span><br>
+    📱 <span id="userMobile"></span>
+  </div>
+
+  <div class="grid">
+    <div class="card" onclick="show('courses')">📚 Courses</div>
+    <div class="card" onclick="show('quiz')">🧠 Quiz</div>
+    <div class="card" onclick="show('leaderboard')">🏆 Rank</div>
+    <div class="card" onclick="openAdmin()">⚙️ Admin</div>
+  </div>
+
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div id="courses" class="screen"><div id="courseBox"></div></div>
+<div id="quiz" class="screen"><div id="quizBox"></div></div>
+<div id="leaderboard" class="screen"><div id="leadBox"></div></div>
+
+<div id="adminPanel" class="screen">
+  <h3>Admin</h3>
+  <div id="adminBox"></div>
+  <button onclick="showScreen('dashboard')">Back</button>
+</div>
+
+<script src="config/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script src="js/student.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+</html>

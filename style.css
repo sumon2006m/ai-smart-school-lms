@@ -1,12 +1,11 @@
 :root {
     --primary: #4a90e2;
-    --bg: #f4f7f6;
-    --text: #333;
+    --bg: #f0f2f5;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -17,16 +16,18 @@ header {
     background: var(--primary);
     color: white;
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    position: sticky;
+    top: 0;
 }
 
 .screen {
     display: none;
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     margin-top: 20px;
 }
 
@@ -35,8 +36,8 @@ header {
 .card {
     background: white;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-bottom: 15px;
     text-align: center;
 }
@@ -44,7 +45,7 @@ header {
 input, select, button {
     width: 100%;
     padding: 12px;
-    margin: 10px 0;
+    margin: 8px 0;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-sizing: border-box;
@@ -54,8 +55,8 @@ button {
     background: var(--primary);
     color: white;
     border: none;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .grid {
@@ -65,8 +66,7 @@ button {
 }
 
 .grid .card {
+    padding: 30px 10px;
+    font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s;
 }
-
-.grid .card:hover { transform: scale(1.05); }

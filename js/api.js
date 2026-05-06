@@ -8,7 +8,7 @@ const API_LEADERBOARD = API_BASE + "?action=leaderboard";
 const API_LOGS = API_BASE + "?action=logs";
 
 // জেনেরিক ডাটা ফেচার ফাংশন
-async function fetchData(apiUrl) {
+async function getData(apiUrl) {
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) throw new Error("Network response was not ok");
@@ -19,21 +19,19 @@ async function fetchData(apiUrl) {
     }
 }
 
-// ডাটা সেভ করার জন্য (POST Method)
+// ডাটা সেভ করার জন্য (POST)
 async function sendData(payload) {
     try {
-        // গুগল স্ক্রিপ্টে POST অনেক সময় রিডাইরেক্ট করে, তাই 'no-cors' বা 
-        // সঠিক মেথড হ্যান্ডলিং প্রয়োজন হতে পারে।
-        const response = await fetch(API_BASE, {
+        await fetch(API_BASE, {
             method: "POST",
-            mode: "no-cors", // গুগল অ্যাপস স্ক্রিপ্টের জন্য জরুরি
-            headers: {
-                "Content-Type": "application/json",
-            },
+            mode: "no-cors", 
+            cache: "no-cache",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
         });
-        return "Sent"; 
+        return true; 
     } catch (error) {
         console.error("API Post Error:", error);
+        return false;
     }
 }

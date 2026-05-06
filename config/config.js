@@ -1,5 +1,7 @@
-const API_USERS="https://sheetdb.io/api/v1/YOUR_USERS_API";
-const API_COURSES="https://sheetdb.io/api/v1/YOUR_COURSE_API";
-const API_QUIZ="https://sheetdb.io/api/v1/YOUR_QUIZ_API";
-const API_LEADERBOARD="https://sheetdb.io/api/v1/YOUR_LEADERBOARD_API";
-const API_LOGS="https://sheetdb.io/api/v1/YOUR_LOGS_API";
+const API_BASE = "https://script.google.com/macros/s/AKfycbwqt1dTVecuz1Z7bQqsi7XrgbtVTvNHvRuXGCxAn_5DE-Dl9x-uAT06By4FDqFrTTAb/exec";
+
+const API_USERS = API_BASE + "?action=users";
+const API_COURSES = API_BASE + "?action=courses";
+const API_QUIZ = API_BASE + "?action=quiz";
+const API_LEADERBOARD = API_BASE + "?action=leaderboard";
+const API_LOGS = API_BASE + "?action=logs";
